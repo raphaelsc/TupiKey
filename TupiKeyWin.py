@@ -17,6 +17,7 @@ def binar(letra):
 
     mudar = bin(ord(letra))
     binario = mudar.replace("b","")
+    print binario
     return binario
 
 def startkey(x):
@@ -89,30 +90,27 @@ def closekey(x):
 def transmitir(x):
     print x
     k = len(x)
-    print k
+    
     try:
-        for i in range(0,k):
+        for i in xrange(0,k):
             print x[i]
             if x[i] == 0:
-                print i
                 time.sleep(1)
-            else:
-                print i
-                SendKeys.SendKeys("""{NUMLOCK}""",pause=0)
-                time.sleep(1)
+            #else:
+            #   SendKeys.SendKeys("""{NUMLOCK}""",pause=0)
+            #   time.sleep(1)
     except NameError as e:
-        
-        print e
+            print e
         
     
 
-startkey(getLED())
-time.sleep(1)
-closekey(getLED())
-time.sleep(1)
-startkey(getLED())
-time.sleep(1)
-closekey(getLED())
+#startkey(getLED())
+#time.sleep(1)
+#closekey(getLED())
+#time.sleep(1)
+#startkey(getLED())
+#time.sleep(1)
+#closekey(getLED())
 
 
 entrada = raw_input("")
