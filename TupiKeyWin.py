@@ -19,6 +19,7 @@ def binar(letra):
     return binario
 
 def startkey(x):
+    
     print x
     try:
         if x[0] == 0:
@@ -59,10 +60,13 @@ def getLED():
     num = win32api.GetKeyState(0x90)
     caps = win32api.GetKeyState(0x14)
     scroll= win32api.GetKeyState(0x91)
+    
     k = (num,caps,scroll)
+    
     return k
 
 def closekey(x):
+    
     if x[0] == 1:
         #send = ("""{NUMLOCK}{CAPSLOCK}{SCROLLLOCK}""")
         send = ("""{NUMLOCK}""")
