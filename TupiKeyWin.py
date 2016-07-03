@@ -93,10 +93,11 @@ def transmitir(x):
     try:
         for i in range(0,k):
             print x[i]
-            if x[i] == 0:            
+            if x[i] == 0:
+                print i
                 time.sleep(1)
             else:
-                print "aqui"
+                print i
                 SendKeys.SendKeys("""{NUMLOCK}""",pause=0)
                 time.sleep(1)
     except NameError as e:
