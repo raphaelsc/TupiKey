@@ -23,7 +23,8 @@ def startkey(x):
     try:
         if x[0] == 0:
             
-            numlock = "{NUMLOCK}"
+            numlock = """{NUMLOCK}"""
+            SendKeys.SendKeys(numlock,pause=0)
             
         elif x[0] == 1:
 
@@ -31,7 +32,8 @@ def startkey(x):
             
         if x[1] == 0:
 
-            capslock = "{CAPSLOCK}"
+            capslock = """{CAPSLOCK}"""
+            SendKeys.SendKeys(capslock,pause=0)
         
         elif x[1] == 1:
 
@@ -39,7 +41,8 @@ def startkey(x):
 
         if x[2] == 0:
 
-            scrolllock = "{SCROLLLOCK}"
+            scrolllock = """{SCROLLLOCK}"""
+            SendKeys.SendKeys(scrolllock,pause=0)
         
         elif x[2] == 1:
 
@@ -49,17 +52,7 @@ def startkey(x):
 
         print(e)
 
-    if (numlock == "none" and capslock == "none" and scrolllock == "none"):
-        print ""
-    else:
-        print ""
-
-    k = ("\"\"\""+numlock+capslock+scrolllock+"\"\"\"")
-
-    print k
-
-    SendKeys.SendKeys(k,pause='0')
-    
+       
         
 def getLED():
     
@@ -73,12 +66,12 @@ def closekey(x):
     if x[0] == 1:
         #send = ("""{NUMLOCK}{CAPSLOCK}{SCROLLLOCK}""")
         send = ("""{NUMLOCK}""")
-        SendKeys.SendKeys(send)
+        SendKeys.SendKeys(send,pause=0)
     elif x[0] == 0:
         ""
     if x[1] == 1:
         send = ("""{CAPSLOCK}""")
-        SendKeys.SendKeys(send)
+        SendKeys.SendKeys(send,pause=0)
     elif x[1] == 0:
         ""
     if x[2] == 1:
@@ -88,11 +81,11 @@ def closekey(x):
         ""
     
 
-#startkey(getLED())
-entrada = raw_input("")
-#time.sleep(3)
-#closekey(getLED())
-print binar(entrada)
+startkey(getLED())
+#entrada = raw_input("")
+time.sleep(3)
+closekey(getLED())
+#print binar(entrada)
 #send = ("""{NUMLOCK 0}{CAPSLOCK 0}{SCROLLLOCK 0}""")
 #SendKeys.SendKeys(send,pause=0)
 
