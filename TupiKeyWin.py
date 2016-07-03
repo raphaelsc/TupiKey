@@ -10,6 +10,7 @@ import os
 import SendKeys
 import win32api
 import time
+import re
 
 
 def binar(letra):
@@ -85,10 +86,46 @@ def closekey(x):
         ""
     
 
+def transmitir(x):
+    print x
+    k = len(x)
+    print k
+    try:
+        for i in range(0,k):
+            print x[i]
+            if x[i] == 0:            
+                time.sleep(1)
+            else:
+                print "aqui"
+                SendKeys.SendKeys("""{NUMLOCK}""",pause=0)
+                time.sleep(1)
+    except NameError as e:
+        
+        print e
+        
+    
+
 startkey(getLED())
-#entrada = raw_input("")
-time.sleep(3)
+time.sleep(1)
 closekey(getLED())
+time.sleep(1)
+startkey(getLED())
+time.sleep(1)
+closekey(getLED())
+
+
+entrada = raw_input("")
+
+
+#time.sleep(3)
+
+
+transmitir(binar(entrada))
+
+
+
+
+
 #print binar(entrada)
 #send = ("""{NUMLOCK 0}{CAPSLOCK 0}{SCROLLLOCK 0}""")
 #SendKeys.SendKeys(send,pause=0)
